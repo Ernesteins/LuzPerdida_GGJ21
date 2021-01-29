@@ -8,14 +8,20 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] Transform head =null;
     [SerializeField] LayerMask playerLayer = 1;
     [SerializeField] float viewRadius = 3; 
-    
-
-    [SerializeField] float patrolRange = 30f;
-    [SerializeField] float searchRange = 5f;
     [SerializeField] Transform chaseTarget = null;
+    
+    [Header("Move settings")]
+    [SerializeField] float chasingTime = 3; 
+    [SerializeField] float searchingTime = 3; 
+    [SerializeField] float searchRange = 5f;
+    [SerializeField] float patrolRange = 30f;
+
     NavMeshAgent agent;
-    bool isChasing = false;
-    float timeToChange = 0;
+    bool isTargetVisible = false;
+    bool wasTargetVisible = false;
+    float stunnedTime = 0;
+    float searchTime = 0;
+    float chaseTime = 0;
     Collider boxCollider;
 
     // Start is called before the first frame update
@@ -28,14 +34,43 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isChasing = IsPlayerVisible();
-      
-        if(isChasing){
+        isTargetVisible = IsPlayerVisible();
+        if(isTargetVisible&&!wasTargetVisible){
+            chaseTime = chasingTime;
+            Debug.Log("Start Chasing");
+        }
+        wasTargetVisible = isTargetVisible;
+
+        if(stunnedTime>0){
+            agent.isStopped = true;
+            stunnedTime -= Time.deltaTime;
+            chaseTime = 0;
+            return;
+        }
+        else agent.isStopped = false;
+
+        if(chaseTime > 0){
             Chase();
+            chaseTime -= Time.deltaTime;
+            if(chaseTime <= 0){
+                Debug.Log("Start serching");
+                searchTime = searchingTime;
+            }
+        }
+        else if(searchTime > 0){
+            //search
+            Patrol(searchRange);
+            searchTime -= Time.deltaTime;
         }
         else{
-            //Patrol(patrolRange);
+            Debug.Log("Patrol...");
+            ///Patrol
+            Patrol(patrolRange);
         }
+    }
+
+    public void Stunning(){
+        stunnedTime = 10f;
     }
     bool IsPlayerVisible(){
         Vector3 pos = head.position + head.forward * viewRadius;
@@ -45,7 +80,6 @@ public class EnemyMovement : MonoBehaviour
             if (Physics.Raycast(head.position,chaseTarget.position-head.position,out hit, viewRadius*2f)){
                 Debug.DrawLine(head.position,hit.point,Color.red,.3f);
                 boxCollider.enabled = true;
-                Debug.Log(hit.collider.gameObject.name);
                 if(hit.transform == chaseTarget){
                     return true;
                 }

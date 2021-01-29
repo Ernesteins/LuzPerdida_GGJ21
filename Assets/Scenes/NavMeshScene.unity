@@ -168,9 +168,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   viewRadius: 6
-  patrolRange: 30
-  searchRange: 5
   chaseTarget: {fileID: 147668347}
+  chasingTime: 3
+  searchingTime: 10
+  searchRange: 5
+  patrolRange: 30
 --- !u!195 &70231056
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -180,7 +182,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 70231054}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 1.5
   m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -219,8 +221,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2982626, y: 2.0737433, z: 4.239857}
-  m_Center: {x: 0, y: 1.3123548, z: -0.540102}
+  m_Size: {x: 1.2982626, y: 2.0737433, z: 3.5455189}
+  m_Center: {x: 0, y: 1.3123548, z: -0.19293284}
 --- !u!1 &147668342 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0,
@@ -1028,7 +1030,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524506552}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1, z: -0.79}
+  m_LocalPosition: {x: 0, y: 1.1, z: -0.48}
   m_LocalScale: {x: 1, y: 1, z: 3}
   m_Children:
   - {fileID: 659065828}

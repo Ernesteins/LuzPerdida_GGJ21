@@ -6,6 +6,8 @@ TagManager:
   tags:
   - foco
   - focoEncendido
+    - Fire
+  - Enemy
   layers:
   - Default
   - TransparentFX

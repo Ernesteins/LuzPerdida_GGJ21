@@ -6,8 +6,11 @@ public class EnemyMovement : MonoBehaviour
 {
     [Header("Detect Settings")]
     [SerializeField] Transform head =null;
+    [SerializeField] float maxViewRadius = 3; 
+    [SerializeField,Range(-2,2)] float yOffset = 3; 
+    [SerializeField] DetectionSphere[] detectionSpheres = null;
+
     [SerializeField] LayerMask playerLayer = 1;
-    [SerializeField] float viewRadius = 3; 
     [SerializeField] Transform chaseTarget = null;
     
     [Header("Move settings")]
@@ -73,11 +76,10 @@ public class EnemyMovement : MonoBehaviour
         stunnedTime = 10f;
     }
     bool IsPlayerVisible(){
-        Vector3 pos = head.position + head.forward * viewRadius;
-        if(Physics.CheckSphere(pos,viewRadius,playerLayer)){
+        if(DetectTarget()){
             RaycastHit hit;
             boxCollider.enabled = false;
-            if (Physics.Raycast(head.position,chaseTarget.position-head.position,out hit, viewRadius*2f)){
+            if (Physics.Raycast(head.position,chaseTarget.position-(head.position+Vector3.up*yOffset),out hit, maxViewRadius)){
                 Debug.DrawLine(head.position,hit.point,Color.red,.3f);
                 boxCollider.enabled = true;
                 if(hit.transform == chaseTarget){
@@ -85,6 +87,14 @@ public class EnemyMovement : MonoBehaviour
                 }
             }
             boxCollider.enabled = true;
+        }
+        return false;
+    }
+    bool DetectTarget(){
+        foreach(DetectionSphere ds in detectionSpheres){
+            if(ds.Detect(chaseTarget,playerLayer)){
+                return true;
+            }
         }
         return false;
     }
@@ -106,9 +116,5 @@ public class EnemyMovement : MonoBehaviour
             }
         }
        return Vector3.zero;
-    }
-    private void OnDrawGizmosSelected() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(head.position + head.forward * viewRadius, viewRadius);
     }
 }

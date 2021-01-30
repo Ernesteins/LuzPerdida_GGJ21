@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private void Awake() {
         instance = this;
+        Time.timeScale = 1;
+        UpdateCursorLock(true);
     }
 
     bool paused = false;
@@ -23,14 +25,23 @@ public class GameManager : MonoBehaviour
     }
     public void Pause(){
         paused = !paused;
+        UpdateCursorLock(!paused);
         OnPause?.Invoke(paused);
         Time.timeScale = paused? 0 : 1;
     }
     public void GameOver(){
+        Debug.Log("GameOver");
+        UpdateCursorLock(false);
         OnGameOver?.Invoke();
         Time.timeScale = 0;
     }
     public void Win(){
+        UpdateCursorLock(false);
         OnWin?.Invoke();
+    }
+
+    void UpdateCursorLock(bool isLocked){
+        Cursor.lockState = isLocked? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !isLocked;
     }
 }

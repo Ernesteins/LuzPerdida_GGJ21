@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class OnGameCanvasController : MonoBehaviour
 {
     [SerializeField] GameObject pauseScreen = null;   
@@ -26,5 +28,11 @@ public class OnGameCanvasController : MonoBehaviour
     }
     public void Pause(){
         GameManager.instance.Pause();
+    }
+    public void Restart(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void GoToMenu(){
+        SceneManager.LoadScene(0);
     }
 }

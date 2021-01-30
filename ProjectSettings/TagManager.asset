@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fire
+  - foco
+  - focoEncendido
   layers:
   - Default
   - TransparentFX

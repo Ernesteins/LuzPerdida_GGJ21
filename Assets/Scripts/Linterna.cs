@@ -11,9 +11,13 @@ public class Linterna : MonoBehaviour
     [SerializeField] DetectionSphere sphere = null;
     [SerializeField] Light linternaLight = null;
 
-    public int flashesRemaining => numOffFlashes;
-
-    private void Start() => TurnOff();
+    public delegate void FlashesCount(int count);
+    public static event FlashesCount OnFlashesCountChange;
+    
+    private void Start() {
+        OnFlashesCountChange?.Invoke(numOffFlashes);
+        TurnOff();
+    }
     private void Update() {
         if(Input.GetKeyDown(linternaKey)){
             TurnOn();
@@ -22,6 +26,7 @@ public class Linterna : MonoBehaviour
     void TurnOn(){
         if(numOffFlashes<=0) return;
         numOffFlashes--;
+        OnFlashesCountChange?.Invoke(numOffFlashes);
 
         Collider[] colliders = Physics.OverlapSphere(sphere.transform.position,sphere.radius, enemyLayer);
         if(colliders == null) return;

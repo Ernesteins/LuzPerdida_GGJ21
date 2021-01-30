@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
     [Header("Detect Settings")]
     [SerializeField] Transform head =null;
     [SerializeField] float maxViewRadius = 3; 
+    [SerializeField,Range(-2,2)] float yOffset = 3; 
     [SerializeField] DetectionSphere[] detectionSpheres = null;
 
     [SerializeField] LayerMask playerLayer = 1;
@@ -78,7 +79,7 @@ public class EnemyMovement : MonoBehaviour
         if(DetectTarget()){
             RaycastHit hit;
             boxCollider.enabled = false;
-            if (Physics.Raycast(head.position,chaseTarget.position-head.position,out hit, maxViewRadius)){
+            if (Physics.Raycast(head.position,chaseTarget.position-(head.position+Vector3.up*yOffset),out hit, maxViewRadius)){
                 Debug.DrawLine(head.position,hit.point,Color.red,.3f);
                 boxCollider.enabled = true;
                 if(hit.transform == chaseTarget){
@@ -92,7 +93,6 @@ public class EnemyMovement : MonoBehaviour
     bool DetectTarget(){
         foreach(DetectionSphere ds in detectionSpheres){
             if(ds.Detect(chaseTarget,playerLayer)){
-                Debug.Log("Detected");
                 return true;
             }
         }

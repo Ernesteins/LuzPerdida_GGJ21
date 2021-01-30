@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class DetectionSphere : MonoBehaviour
 {
-    [SerializeField] float viewRadius = 3; 
+    [SerializeField] float viewRadius = 3;
+
+    public float radius => viewRadius;
 
     public bool Detect(Transform player,LayerMask playerLayer){
         return Physics.CheckSphere(transform.position,viewRadius,playerLayer);

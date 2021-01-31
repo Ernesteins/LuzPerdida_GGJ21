@@ -1,0 +1,10 @@
+*Inicia*
+-Usa Q para usar linterna, E para recoger los focos
+-"Necesito que cambies el foco del faro"-Cambia el foco del faro
+-"Suena el Aullido"-No dejes que te atrape el monstruo
+-"Bien ya puedo ver el foco, voy por ti" -Manten el faro prendido
+-"No veo nada con la neblina, encinede el foco" -Busca otro foco
+-"Bien ya puedo ver el foco, voy por ti" -Manten el faro prendido
+-"Ya casillego, encinede el foco" -Busca otro foco
+-"Ya llegué" -Escapa por el embarcadero
+*Finazila*

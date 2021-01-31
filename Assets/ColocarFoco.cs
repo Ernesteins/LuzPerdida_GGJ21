@@ -32,6 +32,7 @@ public class ColocarFoco : MonoBehaviour
                 focosCompletos.TriggerEvent();
             }
             else{
+                Debug.Log("Foco puesto");
                 focoPuesto.TriggerEvent();
                 Invoke("FocoQuemado",tiempoDelFoco + Random.Range(-tiempoDelFocoVariation,tiempoDelFocoVariation));
             }

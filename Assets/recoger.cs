@@ -20,7 +20,7 @@ public class recoger : MonoBehaviour
             if (heldObject == null)
             {
                 RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickupRange))
+                if (Physics.Raycast(transform.position+transform.forward*0.5f, transform.TransformDirection(Vector3.forward), out hit, pickupRange))
                 {
                     PickupObject(hit.transform.gameObject);
                 }

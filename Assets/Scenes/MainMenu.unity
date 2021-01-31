@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY
+  m_text: Jugar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6081f1aea116b3943a9143c251240c6b, type: 2}
   m_sharedMaterial: {fileID: 21197554235409170, guid: 6081f1aea116b3943a9143c251240c6b,
@@ -1497,7 +1497,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1136923240}
-    characterCount: 4
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -1708,7 +1708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Credits
+  m_text: Creditos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6081f1aea116b3943a9143c251240c6b, type: 2}
   m_sharedMaterial: {fileID: 21197554235409170, guid: 6081f1aea116b3943a9143c251240c6b,
@@ -1778,7 +1778,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1210300061}
-    characterCount: 7
+    characterCount: 8
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -2114,7 +2114,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Game Idea:'
+  m_text: 'Bugs Idea:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6081f1aea116b3943a9143c251240c6b, type: 2}
   m_sharedMaterial: {fileID: 21197554235409170, guid: 6081f1aea116b3943a9143c251240c6b,
@@ -2270,7 +2270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Salir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6081f1aea116b3943a9143c251240c6b, type: 2}
   m_sharedMaterial: {fileID: 21197554235409170, guid: 6081f1aea116b3943a9143c251240c6b,
@@ -2340,7 +2340,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1568448588}
-    characterCount: 4
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -2606,7 +2606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TITULO DEL JUEGO
+  m_text: LUZ PERDIDA
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6081f1aea116b3943a9143c251240c6b, type: 2}
   m_sharedMaterial: {fileID: 21197554235409170, guid: 6081f1aea116b3943a9143c251240c6b,
@@ -2676,12 +2676,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1662743574}
-    characterCount: 16
+    characterCount: 11
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -3112,7 +3112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Credits:'
+  m_text: 'Creditos:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6081f1aea116b3943a9143c251240c6b, type: 2}
   m_sharedMaterial: {fileID: 21197554235409170, guid: 6081f1aea116b3943a9143c251240c6b,
@@ -3182,7 +3182,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2075580600}
-    characterCount: 8
+    characterCount: 9
     spriteCount: 0
     spaceCount: 0
     wordCount: 1

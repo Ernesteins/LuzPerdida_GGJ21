@@ -1,0 +1,253 @@
+fileFormatVersion: 2
+guid: 3503d81df6ce42b4c831b99896165725
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: '!tent-IK'
+    100002: '!tent-IK.001'
+    100004: '!tent-IK.001_end'
+    100006: '!tent-IK.002'
+    100008: '!tent-IK.002_end'
+    100010: '!tent-IK.003'
+    100012: '!tent-IK.003_end'
+    100014: '!tent-IK_end'
+    100016: Armature
+    100018: body-root
+    100020: Bone
+    100022: Bone.009
+    100024: Bone.010
+    100026: Bone.011
+    100028: Bone.012
+    100030: Bone.013
+    100032: Bone.013_end
+    100034: Bone.015
+    100036: Bone.016
+    100038: Bone.017
+    100040: Bone.018
+    100042: Bone.019
+    100044: Bone.020
+    100046: Bone.020_end
+    100048: Bone.021
+    100050: Bone.022
+    100052: Bone.023
+    100054: Bone.024
+    100056: Bone.025
+    100058: Bone.026
+    100060: Bone.026_end
+    100062: Bone.028
+    100064: Bone.029
+    100066: Bone.030
+    100068: Bone.031
+    100070: Bone.032
+    100072: Bone.033
+    100074: Bone.033_end
+    100076: Cube
+    100078: Cube.011
+    100080: Cube.014
+    100082: Icosphere.000
+    100084: Icosphere.004
+    100086: mouth
+    100088: mouth_end
+    100090: //RootNode
+    400000: '!tent-IK'
+    400002: '!tent-IK.001'
+    400004: '!tent-IK.001_end'
+    400006: '!tent-IK.002'
+    400008: '!tent-IK.002_end'
+    400010: '!tent-IK.003'
+    400012: '!tent-IK.003_end'
+    400014: '!tent-IK_end'
+    400016: Armature
+    400018: body-root
+    400020: Bone
+    400022: Bone.009
+    400024: Bone.010
+    400026: Bone.011
+    400028: Bone.012
+    400030: Bone.013
+    400032: Bone.013_end
+    400034: Bone.015
+    400036: Bone.016
+    400038: Bone.017
+    400040: Bone.018
+    400042: Bone.019
+    400044: Bone.020
+    400046: Bone.020_end
+    400048: Bone.021
+    400050: Bone.022
+    400052: Bone.023
+    400054: Bone.024
+    400056: Bone.025
+    400058: Bone.026
+    400060: Bone.026_end
+    400062: Bone.028
+    400064: Bone.029
+    400066: Bone.030
+    400068: Bone.031
+    400070: Bone.032
+    400072: Bone.033
+    400074: Bone.033_end
+    400076: Cube
+    400078: Cube.011
+    400080: Cube.014
+    400082: Icosphere.000
+    400084: Icosphere.004
+    400086: mouth
+    400088: mouth_end
+    400090: //RootNode
+    2100000: TEEF.001
+    2100002: tentaculos
+    2100004: skin-tentacles.001
+    2100006: skin1
+    2100008: eye
+    4300000: Icosphere.004
+    4300002: Cube.011
+    4300004: Cube.014
+    4300006: Cube
+    4300008: Icosphere.000
+    7400000: Armature|ArmatureAction
+    9500000: //RootNode
+    13700000: Cube
+    13700002: Cube.011
+    13700004: Cube.014
+    13700006: Icosphere.000
+    13700008: Icosphere.004
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TEEF.001
+    second: {fileID: 2100000, guid: 82938988f00da274cb60a99e9c723119, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye
+    second: {fileID: 2100000, guid: 69359712afe29ac4a9e947172a9cf86a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: skin-tentacles.001
+    second: {fileID: 2100000, guid: 9c177c4da372d6f439b21680bc268d32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: skin1
+    second: {fileID: 2100000, guid: 605e10c4deaded442917484685158205, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tentaculos
+    second: {fileID: 2100000, guid: cef9577fd66aa3b4bb846c288e6c95fd, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|ArmatureAction
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 56
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

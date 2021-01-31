@@ -51,7 +51,7 @@ public class recoger : MonoBehaviour
     }
     void PickupObject(GameObject pickObj)
     {
-        if (pickObj.GetComponent<Rigidbody>())
+        if (pickObj.GetComponent<Rigidbody>() &&  pickObj.tag=="foco")
         {
             Rigidbody objRig = pickObj.GetComponent<Rigidbody>();
             objRig.useGravity = false;

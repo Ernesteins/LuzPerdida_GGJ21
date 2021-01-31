@@ -43,9 +43,12 @@ public class recoger : MonoBehaviour
         {
             Vector3 moveDirection = (holdParent.position - heldObject.transform.position);
             heldObject.GetComponent<Rigidbody>().AddForce(moveDirection * MoveForce);
+            Invoke("MakeHoldObjectKinematic",0.2f);
         }
     }
-
+    void MakeHoldObjectKinematic(){
+            heldObject.GetComponent<Rigidbody>().isKinematic = true;
+    }
     void PickupObject(GameObject pickObj)
     {
         if (pickObj.GetComponent<Rigidbody>())
@@ -53,6 +56,7 @@ public class recoger : MonoBehaviour
             Rigidbody objRig = pickObj.GetComponent<Rigidbody>();
             objRig.useGravity = false;
             objRig.drag = 10;
+            // objRig.isKinematic = true;
             objRig.transform.parent = holdParent;
             heldObject = pickObj;
         }
@@ -63,6 +67,7 @@ public class recoger : MonoBehaviour
     {
         Rigidbody heldRig = heldObject.GetComponent<Rigidbody>();
         heldRig.useGravity = true;
+        heldRig.isKinematic = false;
         heldRig.drag = 1;
         heldRig.transform.parent = null;
         heldObject = null;

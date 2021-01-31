@@ -19,6 +19,13 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float searchRange = 5f;
     [SerializeField] float patrolRange = 30f;
 
+    [Header("Sound Settings")]
+    [SerializeField] AudioClip inicialClip = null;
+    [SerializeField] AudioClip partullaClip = null;
+    [SerializeField] AudioClip chaseClip = null;
+    [SerializeField] AudioClip searchClip = null;
+    [SerializeField] AudioSource audioSource = null;
+
     NavMeshAgent agent;
     bool isTargetVisible = false;
     bool wasTargetVisible = false;
@@ -26,12 +33,14 @@ public class EnemyMovement : MonoBehaviour
     float searchTime = 0;
     float chaseTime = 0;
     Collider boxCollider;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         boxCollider = GetComponent<Collider>();
+        audioSource.PlayOneShot(inicialClip,1);
     }
 
     // Update is called once per frame
@@ -63,15 +72,25 @@ public class EnemyMovement : MonoBehaviour
         else if(searchTime > 0){
             //search
             Patrol(searchRange);
+            PlaySound(searchClip);
             searchTime -= Time.deltaTime;
+            if(searchTime <= 0){
+                Debug.Log("StartPatrol");
+            }
         }
         else{
-            // Debug.Log("Patrol...");
             ///Patrol
             Patrol(patrolRange);
+            PlaySound(partullaClip);
         }
     }
-
+    void PlaySound(AudioClip clip, bool loop = true){
+        if(clip!=null &&  clip != audioSource.clip){
+            audioSource.clip = clip;
+            audioSource.loop = loop;
+            audioSource.Play();
+        }
+    }
     public void Stunning(){
         stunnedTime = 10f;
     }
@@ -100,6 +119,7 @@ public class EnemyMovement : MonoBehaviour
     }
     void Chase(){
         agent.SetDestination(chaseTarget.position);
+        PlaySound(chaseClip);
     }
     void Patrol(float range){
         if(agent.remainingDistance < 1f){

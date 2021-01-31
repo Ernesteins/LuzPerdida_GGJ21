@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class DialogManager : MonoBehaviour
 {
+
     [SerializeField] RadioTextDisplay display = null;
     // Start is called before the first frame update
     [SerializeField] Dialog[] dialogs = null;
 
     int currentDialog = 0;
+    AudioSource audioSource;
     private void OnEnable() {
         foreach (Dialog d in dialogs)
         {
@@ -25,12 +27,18 @@ public class DialogManager : MonoBehaviour
         Debug.Log("Event Triggered");
         if(currentDialog< dialogs.Length){
             display.Display(dialogs[currentDialog].text,dialogs[currentDialog].displayTime);
+            AudioClip clip = dialogs[currentDialog].voiceClip;
+            if(dialogs != null){
+                audioSource.clip = clip;
+                audioSource.Play();
+            }
         }
         currentDialog++;
         SetUpNextDialogEvent(currentDialog);
     }
     private void Start() {
         SetUpNextDialogEvent(currentDialog);
+        audioSource = GetComponent<AudioSource>();
     }
     void SetUpNextDialogEvent(int index){
         for(int i=0; i<dialogs.Length;i++)

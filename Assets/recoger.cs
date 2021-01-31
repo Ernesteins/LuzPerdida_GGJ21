@@ -6,6 +6,7 @@ public class recoger : MonoBehaviour
 {
     public float pickupRange = 5;
     public float MoveForce = 350;
+    [SerializeField] KeyCode key = KeyCode.E;
     public Transform holdParent;
     private GameObject heldObject;
     // Start is called before the first frame update
@@ -14,7 +15,7 @@ public class recoger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(key))
         {
             if (heldObject == null)
             {

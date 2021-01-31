@@ -66,7 +66,7 @@ public class EnemyMovement : MonoBehaviour
             searchTime -= Time.deltaTime;
         }
         else{
-            Debug.Log("Patrol...");
+            // Debug.Log("Patrol...");
             ///Patrol
             Patrol(patrolRange);
         }

@@ -6,8 +6,15 @@ public class ColocarFoco : MonoBehaviour
 {
     public GameObject foco;
     public GameObject focoEncendido;
-    public GameObject boquilla;
+
+    [SerializeField] int cantidadDeFocos = 3;
+    [SerializeField,Range(1,10)] float tiempoDelFoco = 2;
+    [SerializeField,Range(0,5)] float tiempoDelFocoVariation = 2;
+    [SerializeField] DialogEvent focoPuesto = null;
+    [SerializeField] DialogEvent focoQuemado = null;
+    [SerializeField] DialogEvent focosCompletos = null;
     public girofaro giro;
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -17,24 +24,26 @@ public class ColocarFoco : MonoBehaviour
             //Instantiate(foco.gameObject, boquilla.position-new Vector3(1f,0f,0f), boquilla.rotation);
             //Debug.Log("Crea");
             Destroy(other.gameObject);
-            Debug.Log("Destuye");
+            // Debug.Log("Destuye");
             focoEncendido.SetActive(true);
             giro.TieneFoco = true;
+            cantidadDeFocos--;
+            if(cantidadDeFocos<=0){
+                focosCompletos.TriggerEvent();
+            }
+            else{
+                focoPuesto.TriggerEvent();
+                Invoke("FocoQuemado",tiempoDelFoco + Random.Range(-tiempoDelFocoVariation,tiempoDelFocoVariation));
+            }
         }
 
         //GameEvents.current.colocarFoco(id);
         //GameEvents.current.DoorwayTriggerEnter(id);
 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void FocoQuemado(){
+            focoQuemado.TriggerEvent();
+            giro.TieneFoco = false;
+            focoEncendido.SetActive(false);
     }
 }
